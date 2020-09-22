@@ -3,7 +3,7 @@
 Creates a C const array from a file.
 
 Usage:
-bin2source inputfile outputfile tablename
+bin2source inputfile outputfile arrayname
 
 Example:
 ```

@@ -4,7 +4,7 @@ int bin2source(char *inputfile, char *outputfile, char *tablename);
 
 const char *HELP = "Creates a C const array from a file.\n\n\
 USAGE:\n\
-    bin2source inputfile outputfile tablename\n\
+    bin2source inputfile outputfile arrayname\n\
 \n\
 EXAMPLE:\n\
     bin2source test test.c TESTARRAY\n";
