@@ -14,13 +14,12 @@ int main( int argc, char *argv[] )  {
    if( argc == 4 ) {
       switch (bin2source(argv[1], argv[2], argv[3])) {
           case 0: return 0;
-          break;
 
           case 1: printf("Can't open input file\n");
-          break;
+          return 1;
 
           case 2: printf("Can't open output file\n");
-          break;
+          return 2;
       }
 
    }
