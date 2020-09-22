@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int bin2source(char *inputfile, char *outputfile, char *tablename);
-
 // returns 0:OK|1:Can't open input file|2:Can't open output file
 int bin2source(char *inputfile, char *outputfile, char *tablename)
 {
