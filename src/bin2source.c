@@ -24,7 +24,7 @@ int bin2source(char *inputfile, char *outputfile, char *tablename)
     fclose( file );
 
     file=fopen(outputfile, "w");
-    if ( file == NULL ) return 2;
+    if ( file == NULL ) { free( data ); return 2; }
 
     fprintf(file,"typedef unsigned char UINT8;\nconst UINT8 %s[%d] = {\n",tablename,lenght);
     for (i=0; i<lenght; i++) {
