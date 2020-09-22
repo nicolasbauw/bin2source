@@ -19,3 +19,5 @@ const UINT8 TESTARRAY[5] = {
         10,
 };
 ```
+
+To compile, just type ```make```.
