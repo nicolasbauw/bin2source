@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int bin2source(char inputfile[], char outputfile[], char tablename[]);
+int bin2source(char *inputfile, char *outputfile, char *tablename);
 
-// returns 0:OK|1:NOK
+// returns 0:OK|1:Can't open input file|2:Can't open output file
 int bin2source(char *inputfile, char *outputfile, char *tablename)
 {
     unsigned char * data;
@@ -26,7 +26,7 @@ int bin2source(char *inputfile, char *outputfile, char *tablename)
     fclose( file );
 
     file=fopen(outputfile, "w");
-    if ( file == NULL ) return 1;
+    if ( file == NULL ) return 2;
 
     fprintf(file,"typedef unsigned char UINT8;\nconst UINT8 %s[%d] = {\n",tablename,lenght);
     for (i=0; i<lenght; i++) {
