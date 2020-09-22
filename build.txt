@@ -1,0 +1,1 @@
+clang -o bin2source main.c bin2source.c
