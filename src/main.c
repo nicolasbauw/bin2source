@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int bin2source(char *inputfile, char *outputfile, char *tablename);
+int bin2source(char *inputfile, char *outputfile, char *tablename, int amiga);
 
 const char *HELP = "Creates a C const array from a file.\n\n\
 USAGE:\n\
@@ -10,18 +10,18 @@ EXAMPLE:\n\
     bin2source test test.c TESTARRAY\n";
 
 int main( int argc, char *argv[] )  {
+    int amiga;
+    if( argc == 4 || 5) {
+    if (argv[4] == "--amiga") { amiga = 1; } else { amiga = 0; }
+    switch (bin2source(argv[1], argv[2], argv[3], amiga)) {
+        case 0: return 0;
 
-   if( argc == 4 ) {
-      switch (bin2source(argv[1], argv[2], argv[3])) {
-          case 0: return 0;
+        case 1: printf("Can't open input file\n");
+        return 1;
 
-          case 1: printf("Can't open input file\n");
-          return 1;
-
-          case 2: printf("Can't open output file\n");
-          return 2;
-      }
-
-   }
-   else printf("%s", HELP);
+        case 2: printf("Can't open output file\n");
+        return 2;
+        }
+    }
+    else printf("%s", HELP);
 }
