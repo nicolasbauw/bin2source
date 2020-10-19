@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 // returns 0:OK|1:Can't open input file|2:Can't open output file
-int bin2source(char *inputfile, char *outputfile, char *tablename)
+int bin2source(char *inputfile, char *outputfile, char *tablename, int amiga)
 {
     unsigned char *data;
     FILE *file;
@@ -26,7 +26,8 @@ int bin2source(char *inputfile, char *outputfile, char *tablename)
     file=fopen(outputfile, "w");
     if ( file == NULL ) { free( data ); return 2; }
 
-    fprintf(file,"typedef unsigned char UINT8;\nconst UINT8 %s[%d] = {\n",tablename,lenght);
+    if (!amiga) fprintf(file,"typedef unsigned char UINT8;\nconst UINT8 %s[%d] = {\n",tablename,lenght);
+    else  fprintf(file,"#include <exec/types.h>\nconst UBYTE %s[%d] = {\n",tablename,lenght);
     for (i=0; i<lenght; i++) {
         fprintf(file,"\t%i,\n",data[i]);
     }
