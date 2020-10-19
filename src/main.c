@@ -3,8 +3,8 @@
 
 int bin2source(char *inputfile, char *outputfile, char *tablename, int amiga);
 
-const char *HELP = "bin2source V1.1\n\
-Creates a C const array from a file.\n\n\
+const char *HELP = "bin2source 1.1.0\n\
+Creates a C bytes array from a file.\n\n\
 USAGE:\n\
     bin2source inputfile outputfile arrayname [--amiga]\n\
 \n\
