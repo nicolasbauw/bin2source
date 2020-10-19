@@ -3,9 +3,10 @@
 
 int bin2source(char *inputfile, char *outputfile, char *tablename, int amiga);
 
-const char *HELP = "Creates a C const array from a file.\n\n\
+const char *HELP = "bin2source V1.1\n\
+Creates a C const array from a file.\n\n\
 USAGE:\n\
-    bin2source inputfile outputfile arrayname\n\
+    bin2source inputfile outputfile arrayname [--amiga]\n\
 \n\
 EXAMPLE:\n\
     bin2source test test.c TESTARRAY\n";
@@ -18,7 +19,7 @@ int main( int argc, char *argv[] )  {
             if (strncmp(argv[4], "--amiga", 7) == 0) amiga = 1;
         }
         else amiga = 0;
-        
+
         switch (bin2source(argv[1], argv[2], argv[3], amiga)) {
             case 0: return 0;
 
