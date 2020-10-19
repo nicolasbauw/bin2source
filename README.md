@@ -1,6 +1,6 @@
 # bin2source
 
-Creates a C const array from a file.
+Creates a C bytes array from a file.
 
 Usage:
 bin2source inputfile outputfile arrayname
@@ -19,6 +19,7 @@ const UINT8 TESTARRAY[5] = {
         10,
 };
 ```
+You can change the typedef or array type to whatever you want, of course.
 
 With the --amiga commutator (I use it with VBCC for instance), the output will be like:
 ```
