@@ -15,8 +15,8 @@ int main( int argc, char *argv[] )  {
     // Amiga mode ?
     int amiga;
     if( argc == 4 || argc == 5) {
-        if (argv[4]) {
-            if (strncmp(argv[4], "--amiga", 7) == 0) amiga = 1;
+        if (argv[4] && (strncmp(argv[4], "--amiga", 7) == 0)) {
+            amiga = 1;
         }
         else amiga = 0;
 
